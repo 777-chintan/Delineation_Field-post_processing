@@ -1,0 +1,11 @@
+#export model for inference
+python object_detection/export_inference_graph.py --pipeline_config_path=/home/chintu/Desktop/maskrcnn/maskrcnn_wth_tensorflow_object_detection_api/training_data/pipeline.config --trained_checkpoint_prefix=/home/chintu/Desktop/maskrcnn/maskrcnn_wth_tensorflow_object_detection_api/training_data/ckpt_mindanao_29042021/model.ckpt-200000 --output_directory=/home/chintu/Desktop/maskrcnn/maskrcnn_wth_tensorflow_object_detection_api/training_data/saved_model/
+
+
+for creating record
+#create coco_records
+python create_coco_tf_record.py --train_image_dir=/home/chintu/Desktop/maskrcnn/maskrcnn_wth_tensorflow_object_detection_api/training_data/train/images/ --val_image_dir=/home/chintu/Desktop/maskrcnn/maskrcnn_wth_tensorflow_object_detection_api/training_data/val/images/ --train_annotations_file=/home/chintu/Desktop/maskrcnn/maskrcnn_wth_tensorflow_object_detection_api/training_data/train/train2016.json --val_annotations_file=/home/chintu/Desktop/maskrcnn/maskrcnn_wth_tensorflow_object_detection_api/training_data/val/val2016.json --output_dir=/home/chintu/Desktop/maskrcnn/maskrcnn_wth_tensorflow_object_detection_api/training_data/record/ --include_masks=True --logtostderr
+
+#concat records using cat
+cat files >> train.record
+cat files >> val.record

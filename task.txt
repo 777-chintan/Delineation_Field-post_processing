@@ -1,0 +1,5 @@
+one image inferncence (1st)
+validation - iou (50%)
+
+
+pre-processing
